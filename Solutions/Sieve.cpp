@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+#define MAXN 10001
+bool primes[MAXN];
+void sieve(int n)
+{
+    int i;
+    for(i=2;i<MAXN;i++)
+        primes[i]=true;
+    if(n<2)
+    return ; // no primes smaller than 2
+    primes[2]=true;
+    primes[3]=true;
+    for(i=4;i<MAXN;i+=2)
+    primes[i]=false;
+    for(i=3;i*i<MAXN;i+=2)
+    {
+        if(primes[i])
+        {
+            for(int j=i;j<MAXN;j+=i)
+                primes[j]=false;
+            primes[i]=true;
+        }
+    }
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter a number upto which primes are to be calculated:";
+    cin>>n;
+    if(n>MAXN)
+        n=MAXN;
+    sieve(n);
+    cout<<"Primes lower than "<<n<<" are :";
+    for(int i=2;i<=n;i++)
+    {
+        if(primes[i])
+            cout<<i<<" ";
+    }
+    system("pause");
+    return 0;
+}
