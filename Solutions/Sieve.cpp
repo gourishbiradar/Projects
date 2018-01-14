@@ -6,12 +6,10 @@ bool primes[MAXN];
 void sieve(int n)
 {
     int i;
-    for(i=2;i<MAXN;i++)
-        primes[i]=true;
     if(n<2)
     return ; // no primes smaller than 2
-    primes[2]=true;
-    primes[3]=true;
+    for(i=2;i<MAXN;i++)
+        primes[i]=true;
     for(i=4;i<MAXN;i+=2)
     primes[i]=false;
     for(i=3;i*i<MAXN;i+=2)
