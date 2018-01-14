@@ -1,7 +1,8 @@
 #include <iostream>
+#include <limits> 
 using namespace std;
 
-#define MAXN 10001
+#define MAXN INT_MAX
 bool primes[MAXN];
 void sieve(int n)
 {
