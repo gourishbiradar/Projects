@@ -27,25 +27,26 @@ int main()
     switch(choice)
     {
         case 1:
-            emi = mortgage(principal,roi/100,term);
+            emi = mortgage(principal,roi,term);
             units = " years";
         break;
         case 2:
-            emi = mortgage(principal,roi/1200,term);
+            emi = mortgage(principal,roi/12.0,term);
             units = " months";
         break;
         case 3:
-            emi = mortgage(principal,roi/4800,term);
+            emi = mortgage(principal,roi/48.0,term);
             units = " weeks";
         break;
         case 4:
-            emi = mortgage(principal,roi/36500,term);
+            emi = mortgage(principal,roi/365.25,term);
             units = " days";
         break;
         default:
         cout<<"Wrong choice entered!";
         return -1;
     }
-    cout<<"The principal "<<principal<<" can be paid with a monthly payment of "<<emi<<" over "<<term<<units;
+    cout<<"The principal "<<principal<<" can be paid with a monthly payment of "<<emi<<" over "<<term<<units<<endl;
+    system("pause");
     return 0;
 }
