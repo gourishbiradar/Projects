@@ -50,6 +50,7 @@ int main()
     //Subset sum approach
     //cout<<SubSet(x,n,1); // start with 1, check if you can take it as part of one of the solutions or not, continue with the next number and so on
     //nth root appraoch
+    //double highest_num = pow(x,1.0/n); check if it works!!
     double highest_num = nthroot(x,n);
     cout<<NSums(x,n,highest_num);
     return 0;
